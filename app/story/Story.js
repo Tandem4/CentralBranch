@@ -17,7 +17,7 @@ class Story extends Component {
 	          {...actions}
 	          renderRow = {ArticleContainer}
 	        />
-      </View>		
+      </View>
     )
 	}
 }
