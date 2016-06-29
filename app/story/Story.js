@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { View, ScrollView, Text, ListView, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 
+import styles from './styles.js';
 import articlesData from '../data/articlesData';
 import ArticleContainer from './ArticleContainer';
 import * as storyActions from './storyActions';
@@ -36,13 +37,25 @@ class Story extends Component {
 			    <TouchableHighlight style={styles.full} onPress={ this.navigate.bind(this) }>
 			      <Text style={styles.trendRow} >Back</Text>
 			    </TouchableHighlight>
-	        <ListView
-	          dataSource={this.props.dataSource}
-	          {...actions}
-	          renderRow = {ArticleContainer}
-            enableEmptySections={true}
-	        />
+
+        <View style={styles.body}>
+          <ScrollView
+            ref={(scrollView) => { _scrollView = scrollView; }}
+            automaticallyAdjustContentInsets={false}
+            scrollEventThrottle={200}>
+
+            <ListView
+              dataSource={this.props.dataSource}
+              {...actions}
+              renderRow = {ArticleContainer}
+              enableEmptySections={true}
+            />
+
+          </ScrollView>
+        </View>   
+        
       </View>
+
     )
 	}
 }
