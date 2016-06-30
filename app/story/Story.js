@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import  NavigationBar  from 'react-native-navbar';
 
 
-import styles from './styles.js';
 import articlesData from '../data/articlesData';
 import ArticleContainer from './ArticleContainer';
 import * as storyActions from './storyActions';
