@@ -11,13 +11,15 @@ import Slant from './Slant';
 // let URL = 'https://www.google.com'
 
 
-const ArticleContainer = (article) => { 
+const ArticleContainer = (article) => {
   return (
-    <View>
-      <Publication 
-        publication={article.publication} 
-        headline={article.headline}  
-        moodScore = {article.moodScore} />
+
+
+    <View style={styles.card} >
+      <Publication
+        publication={article.article_date}
+        headline={article.title}  />
+      <Slant mood={article.joy} />
     </View>
   );
 }

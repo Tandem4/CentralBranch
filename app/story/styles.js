@@ -70,7 +70,17 @@ let styles = StyleSheet.create({
     flex: 1,
     borderRadius: 5,
     height: 4,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+  },
+  trendRow: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    padding: 10
+  },
+  full: {
+    flex: 1
   }
 });
 
