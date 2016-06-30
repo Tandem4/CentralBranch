@@ -13,11 +13,11 @@ import Slant from './Slant';
 
 const ArticleContainer = (article) => { 
   return (
-    <View style={styles.card} >
+    <View>
       <Publication 
         publication={article.publication} 
-        headline={article.headline}  />
-      <Slant mood={article.moodScore} />
+        headline={article.headline}  
+        moodScore = {article.moodScore} />
     </View>
   );
 }

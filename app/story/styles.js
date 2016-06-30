@@ -1,37 +1,76 @@
 import { Animated, StyleSheet, View, Text, Dimensions } from 'react-native';
 
 let styles = StyleSheet.create({
-  card: {
+  body: {
+    backgroundColor: '#eaedf1',
+    flex: 1,
+  },
+  firstRow: {
     flexDirection: 'row',
-    padding: 10,
-    marginLeft: 10,
-    marginRight: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#CCCCCC',
-    backgroundColor: '#f4f4f4'
+    alignItems: 'center',
+    paddingLeft: 25,
+    paddingRight: 25,
+    marginLeft: 15,
+    marginRight: 15,
+    backgroundColor: '#00afd1',
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    shadowColor: '#000000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
   },
   publication: {
-    fontSize: 11
+    flex: 3
+  },
+  publicationText: {
+    fontFamily: 'Silom',
+    fontSize: 15,
+    // fontWeight: 'bold',
+    color: '#ffffff'
   },
   headline: {
+    flex: 1,
+    flexDirection: 'row',
     flexWrap: 'wrap',
-    color: '#000',
-    fontSize: 16
+    paddingLeft: 25,
+    paddingRight: 25,
+    paddingTop: 15,
+    paddingBottom: 15,
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 11,
+    borderBottomColor: '#eaedf1',
+    backgroundColor: '#ffffff',
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    shadowColor: '#000000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: {
+      height: 4,
+      width: 0
+    }
+  },
+  headlineText: {
+    flex: 1,
+    flexWrap: 'wrap',
+    fontFamily: 'Oswald',
+    color: '#5d5d5d',
+    fontSize: 20
   },
   moodScore: {
     flex: 1,
-    marginLeft: 10,
-    flexDirection: 'column'
-  },
-  firstRow: {
-    flex: 5
+    marginLeft: 10
   },
   bar: {
-    alignSelf: 'flex-end',
+    flex: 1,
     borderRadius: 5,
     height: 4,
-    marginRight: 5,
-    backgroundColor: '#f55443',
+    backgroundColor: '#ffffff'
   }
 });
 
