@@ -1,6 +1,6 @@
 import React, { Component, PropTypes, Linking} from 'react';
 import { Animated, StyleSheet, View, Text, Dimensions, WebView, TouchableHighlight } from 'react-native';
-import styles from '../assets/styles.js';
+import styles from './styles.js';
 
 let staticURL = 'https://www.facebook.com';
 
