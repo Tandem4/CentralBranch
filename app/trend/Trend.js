@@ -55,7 +55,7 @@ class Trend extends Component {
 
           {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
 
-          <View style={{backgroundColor: '#f4f4f4', flexDirection: 'row', }}>
+          <View style={styles.trendRows}>
             <View style={{backgroundColor: '#1fbba6', flex: 1, height: deviceWidth }}>
               
               <View style={{ alignItems: 'flex-end', padding: 10 }}>

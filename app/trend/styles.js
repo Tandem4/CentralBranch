@@ -25,6 +25,10 @@ let styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 30
   },
+  trendRows: {
+    backgroundColor: '#f4f4f4',
+    flexDirection: 'row' 
+  },
   date: {
     flex: 1,
     textAlign: 'center',
