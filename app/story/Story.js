@@ -37,22 +37,8 @@ class Story extends Component {
 	render() {
 		const { state, actions } = this.props;
 		return (
-			<View>
-        <NavigationBar
-          title={{title: 'Tandem News Feed', tintColor: '#fff', fontFamily: 'Silom'}}
-          leftButton={{title: 'Back', tintColor: '#fff'}}
-          tintColor={'#00afd1'}
-          style={{height: 100}}
-        />
-			    <TouchableHighlight style={styles.full} onPress={ this.navigate.bind(this) }>
-			      <Text style={styles.trendRow} >Back</Text>
-			    </TouchableHighlight>
 
         <View style={styles.body}>
-
-          <View style={{paddingBottom: 20}}>
-            <Text>{' '}</Text>
-          </View>
 
           <ScrollView
             ref={(scrollView) => { _scrollView = scrollView; }}
@@ -63,13 +49,11 @@ class Story extends Component {
               dataSource={this.props.dataSource}
               {...actions}
               renderRow = {ArticleContainer}
-              enableEmptySections={true}
-            />
+              enableEmptySections={true} />
 
           </ScrollView>
-        </View>   
         
-      </View>
+        </View>   
     )
 	}
 }
