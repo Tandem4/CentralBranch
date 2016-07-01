@@ -2,14 +2,21 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { View, ScrollView, Text, ListView, TouchableHighlight, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
-import Icon from 'react-native-vector-icons/Ionicons';
 
+// Actions & Store
 import Store from '../store.js';
-import styles from './styles.js';
 import articlesData from '../data/trendsData';
-// import DashContainer from './DashContainer';
 import * as trendActions from './trendActions';
 
+// Styles & Fonts
+import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './styles.js';
+
+// Components
+import DataSquare from './DataSquare';
+import EndSquare from './EndSquare';
+
+// Shared Values
 let deviceWidth = ( Dimensions.get('window').width / 2 )
 let deviceHeight = ( Dimensions.get('window').height / 2 )
 
@@ -56,50 +63,11 @@ class Trend extends Component {
           {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
 
           <View style={styles.trendRows}>
-            <View style={{backgroundColor: '#1fbba6', flex: 1, height: deviceWidth }}>
-              
-              <View style={{ alignItems: 'flex-end', padding: 10 }}>
-                <Text >
-                  <Icon name="ios-options" size={18} color="#fff"></Icon>
-                </Text>
-              </View>
 
-              <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 15, marginBottom: 10}}>
-                <Text style={{fontSize: 25, fontFamily: 'Oswald', color: '#eaedf1', textAlign: 'center'}}>
-                  European Union
-                </Text>
-              </View>
-
-              <View style={{ alignItems: 'center', padding: 10 }}>
-                <Text>
-                  <Icon name="md-trending-up" size={34} color="#fff"></Icon>
-                </Text>
-              </View>
-
-            </View>
-
-            <View style={{backgroundColor: '#323a45', flex: 1, height: deviceWidth}}>
-              
-              <View style={{ alignItems: 'flex-end' }}>
-                <Text>
-                  Top
-                </Text>
-              </View>
-
-              <View style={{ alignItems: 'center' }}>
-                <Text style={{fontSize: 25, fontFamily: 'Oswald', color: '#eaedf1'}}>
-                  End
-                </Text>
-              </View>
-
-              <View style={{ alignItems: 'center' }}>
-                <Text>
-                  Bottom
-                </Text>
-              </View>
-
-            </View>
+            <DataSquare />
+            <DataSquare />
           </View>
+
 
 
           {/* <ListView
