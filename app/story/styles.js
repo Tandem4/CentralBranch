@@ -39,7 +39,33 @@ let styles = StyleSheet.create({
     paddingLeft: 25,
     paddingRight: 25,
     paddingTop: 15,
-    paddingBottom: 15,
+    paddingBottom: 5,
+    marginLeft: 15,
+    marginRight: 15,
+    borderBottomColor: '#eaedf1',
+    backgroundColor: '#ffffff',
+    shadowColor: '#000000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: {
+      height: 6,
+      width: 0
+    }
+  },
+  headlineText: {
+    flex: 1,
+    flexWrap: 'wrap',
+    fontFamily: 'Oswald',
+    color: '#5d5d5d',
+    fontSize: 20
+  },
+  cardFooter: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingLeft: 25,
+    paddingRight: 25,
+    paddingTop: 5,
+    paddingBottom: 10,
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 11,
@@ -51,16 +77,13 @@ let styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     shadowOffset: {
-      height: 4,
+      height: 7,
       width: 0
     }
   },
-  headlineText: {
+  link: {
     flex: 1,
-    flexWrap: 'wrap',
-    fontFamily: 'Oswald',
-    color: '#5d5d5d',
-    fontSize: 20
+    alignItems: 'flex-end'
   },
   moodScore: {
     flex: 1,

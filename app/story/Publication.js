@@ -63,12 +63,18 @@ class Publication extends Component {
 			        {this.props.headline}
 			        { ' ' }
 			      </Text>
-
-			      <Text>
-			        <Icon name="ios-link" size={18} color="#5d5d5d"></Icon>
-			      </Text>
 			      
 		      </TouchableOpacity>
+
+	      </View>
+
+	      <View style={styles.cardFooter}>
+	        <Text style={{flex: 15}}>
+	         {' '}
+	        </Text>
+		      <Text style={styles.link}>
+		        <Icon name="ios-link" size={18} color="#5d5d5d"></Icon>
+		      </Text>
 
 	      </View>
 
