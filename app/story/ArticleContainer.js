@@ -16,7 +16,8 @@ const ArticleContainer = (article) => {
       {/* Data gets funneled intp Publication */}
       <Publication
         publication={'Washington Post'}
-        headline={'Example of a very long descriptive headline from a major national publication on a trending topic'} />
+        headline={'Example of a very long descriptive headline from a major national publication on a trending topic'} 
+        moodScore= {15}/>
     
     </View>
   );
