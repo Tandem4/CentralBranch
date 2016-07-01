@@ -8,7 +8,7 @@ let styles = StyleSheet.create({
     marginRight: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#CCCCCC',
-    backgroundColor: '#f4f4f4'
+    backgroundColor: '#1fbba6'
   },
   publication: {
     fontSize: 11
