@@ -40,11 +40,13 @@ class Story extends Component {
 
         <View style={styles.body}>
 
+          {/* Specify unsticky scroll */}
           <ScrollView
             ref={(scrollView) => { _scrollView = scrollView; }}
             automaticallyAdjustContentInsets={false}
             scrollEventThrottle={200}>
 
+            {/* Funnel store data into ListView */}
             <ListView
               dataSource={this.props.dataSource}
               {...actions}

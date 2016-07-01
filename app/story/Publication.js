@@ -59,7 +59,7 @@ class Publication extends Component {
 	          style={{flex: 1, flexWrap: 'wrap'}}>
 
 			      <Text style={styles.headlineText}
-			        numberOfLines={2}>
+			        numberOfLines={3}>
 			        {this.props.headline}
 			        { ' ' }
 			      </Text>
