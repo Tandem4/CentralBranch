@@ -35,16 +35,26 @@ class Trend extends Component {
   render() {
     const { state, actions } = this.props;
     return (
-      <View style={styles.full}>
+      <View style={styles.body}>
+
         <ScrollView
          ref={(scrollView) => { _scrollView = scrollView; }}
          automaticallyAdjustContentInsets={false}
-         scrollEventThrottle={200}
-         >
-          <Text style={[styles.trendRow, styles.title]}>
-            Newsfeed
-          </Text>
-          <Text style={styles.date}>{this.props.currentDate}</Text>
+         scrollEventThrottle={200} >
+          <View style={styles.header}> 
+            <Text style={styles.preTitle}>
+              Today On
+            </Text>
+            <Text style={styles.title}>
+              Tandem News
+            </Text>
+            <Text style={styles.tagline}>
+              News In Perspective
+            </Text>
+          </View> 
+
+          {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
+
           <View style={{backgroundColor: '#f4f4f4', flexDirection: 'row', }}>
             <View style={{backgroundColor: '#1fbba6', flex: 1, height: deviceWidth }}>
               

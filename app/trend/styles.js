@@ -1,57 +1,34 @@
 import { Animated, StyleSheet, View, Text, Dimensions } from 'react-native';
 
 let styles = StyleSheet.create({
-  card: {
-    flexDirection: 'row',
-    padding: 10,
-    marginLeft: 10,
-    marginRight: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#CCCCCC',
-    backgroundColor: '#1fbba6'
-  },
-  publication: {
-    fontSize: 11
-  },
-  headline: {
-    flexWrap: 'wrap',
-    color: '#000',
-    fontSize: 16
-  },
-  moodScore: {
+  body: {
+    backgroundColor: '#eaedf1',
     flex: 1,
-    marginLeft: 10,
-    flexDirection: 'column'
   },
-  firstRow: {
-    flex: 5
-  },
-  bar: {
-    alignSelf: 'flex-end',
-    borderRadius: 5,
-    height: 4,
-    marginRight: 5,
-    backgroundColor: '#f55443',
-  },
-
-  trendRow: {
-    flex: 1,
+  preTitle: {
+    fontSize: 12,
+    color: '#9ea7b3',
+    fontFamily: 'Silom',
     textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    padding: 10
+    marginTop: 30,
   },
   title: {
-    fontSize: 36,
-    padding: 20
+    fontSize: 26,
+    color: '#1d3037',
+    fontFamily: 'Silom',
+    textAlign: 'center'
+  },
+  tagline: {
+    fontSize: 12,
+    color: '#9ea7b3',
+    fontFamily: 'Silom',
+    textAlign: 'center',
+    marginBottom: 30
   },
   date: {
     flex: 1,
     textAlign: 'center',
     paddingBottom: 20
-  },
-  full: {
-    flex: 1
   }
 });
 

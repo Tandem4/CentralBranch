@@ -12,8 +12,8 @@ import Publication from './Publication';
 
 const ArticleContainer = (article) => {
   return (
-    <View style={styles.card}>
-      {/* Data gets funneled intp Publication */}
+    <View>
+      {/* Data gets funneled into Publication */}
       <Publication
         publication={'Washington Post'}
         headline={'Example of a very long descriptive headline from a major national publication on a trending topic'} 
