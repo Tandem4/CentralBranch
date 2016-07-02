@@ -4,8 +4,12 @@ import { View, ScrollView, Text, ListView, TouchableOpacity, Dimensions, StyleSh
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 
+// Styles & Fonts
 import Icon from 'react-native-vector-icons/Ionicons';
-import styles from './styles.js';       
+import styles from './styles.js';     
+
+// Components 
+import PolylineSVG from './PolylineSVG';  
 
 let deviceWidth = ( Dimensions.get('window').width / 2 )
 let deviceHeight = ( Dimensions.get('window').height / 2 )
@@ -56,9 +60,9 @@ class DataSquare extends Component {
 
         {/* Bottom Component */}
         <View style={styles.dataSquareBottom}>
-          <Text>
-            <Icon name="md-trending-up" size={34} color="#fff"></Icon>
-          </Text>
+          <View>
+            <PolylineSVG />
+          </View>
         </View>
 
       </View>

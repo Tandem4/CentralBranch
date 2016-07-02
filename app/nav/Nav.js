@@ -9,9 +9,6 @@ import styles from './styles.js';
 class Nav extends Component {
   navigate() { this.props.navigator.push({ name: 'Trend' }); }
   render() {
-    console.log('+++++++++++++')
-    console.log(this.props)
-    console.log('+++++++++++++')
 
     // For Alternating Color Blocks
   let navSwatches;
