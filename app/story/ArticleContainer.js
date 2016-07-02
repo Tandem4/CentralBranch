@@ -13,6 +13,7 @@ import Publication from './Publication';
 const ArticleContainer = (article) => {
   return (
     <View>
+
       {/* Data gets funneled into Publication */}
       <Publication
         publication={'Washington Post'}

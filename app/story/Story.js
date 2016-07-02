@@ -52,6 +52,12 @@ class Story extends Component {
 
             <Nav index={3} />
 
+            <View>
+              <Text>
+                { ' ' }
+              </Text>
+            </View>
+
             {/* Funnel store data into ListView */}
             <ListView
               dataSource={this.props.dataSource}

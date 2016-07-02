@@ -13,10 +13,8 @@ let styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: '#00afd1',
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
     shadowColor: '#000000',
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: {
       height: 1,
@@ -45,7 +43,7 @@ let styles = StyleSheet.create({
     borderBottomColor: '#eaedf1',
     backgroundColor: '#ffffff',
     shadowColor: '#000000',
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: {
       height: 6,
@@ -74,7 +72,7 @@ let styles = StyleSheet.create({
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     shadowColor: '#000000',
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: {
       height: 7,
