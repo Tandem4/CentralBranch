@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { View, ScrollView, Text, ListView, TouchableHighlight, Dimensions, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, ListView, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
+import Communications from 'react-native-communications';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles.js';       
@@ -12,8 +13,12 @@ let deviceHeight = ( Dimensions.get('window').height / 2 )
 
 
 class DataSquare extends Component {
+  navigate() { 
+    var context = this;
+    context.props.navigator.push({ name: 'Story' }); 
+  }
   render(){
-
+      // For Alternating Color Blocks
       let background;
       if (this.props.index%4 === 0) {
         background = StyleSheet.create({ 
@@ -28,7 +33,7 @@ class DataSquare extends Component {
         background = StyleSheet.create({ 
           color: {backgroundColor: '#00afd1' }})
       }
-      
+
     return(
 
        <View style={[styles.dataSquare, {height: deviceWidth, width: deviceWidth}, background.color ]}>
@@ -42,9 +47,11 @@ class DataSquare extends Component {
 
         {/* Center Component */}
         <View style={styles.dataSquareCenter}>
-          <Text style={styles.dataSquareCenterText}>
-            {this.props.data.trend_name}
-          </Text>
+
+            <Text style={styles.dataSquareCenterText}>
+              {this.props.data.trend_name.toLowerCase()}
+            </Text>
+
         </View>
 
         {/* Bottom Component */}

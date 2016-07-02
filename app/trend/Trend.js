@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { View, ScrollView, Text, ListView, TouchableHighlight, Dimensions } from 'react-native';
+import { View, ScrollView, Text, ListView, TouchableOpacity, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 
 // Actions & Store
@@ -58,8 +58,15 @@ class Trend extends Component {
           <View style={styles.trendRows}>
             {/* Check async return on trendsData */}
             { this.props.trendsData.trends ? 
-                this.props.trendsData.trends.map((trend, i) => 
-                    <DataSquare key={i} index={i} data={trend} /> 
+                this.props.trendsData.trends.map((trend, i) =>
+
+                    <TouchableOpacity
+                      onPress={this.navigate.bind(this)}
+                      key={i}>
+
+                      <DataSquare key={i} index={i} data={trend} />
+
+                    </TouchableOpacity> 
                 ) 
               : <Text>Loading Trends ...</Text> }
             <EndSquare />
