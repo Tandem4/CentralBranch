@@ -11,32 +11,56 @@ class Nav extends Component {
   render() {
 
     // For Alternating Color Blocks
-  let background;
+  let navSwatches;
   if (this.props.index%4 === 0) {
-    background = StyleSheet.create({ 
-      color: {backgroundColor: '#1fbba6' }})
+    navSwatches = StyleSheet.create({ 
+      tabs: {backgroundColor: '#1fbba6' },
+      arrow: {color: '#fff'}
+    })
   } else if ((this.props.index-1)%4 === 0) {
-    background = StyleSheet.create({ 
-      color: {backgroundColor: '#af6d7e' }})
+    navSwatches = StyleSheet.create({ 
+      tabs: {backgroundColor: '#af6d7e' },
+      arrow: {color: '#fff'}
+    })
   } else if ((this.props.index-2)%4 === 0) {
-    background = StyleSheet.create({ 
-      color: {backgroundColor: '#ccc600' }})
+    navSwatches = StyleSheet.create({ 
+      tabs: {backgroundColor: '#ccc600' },
+      arrow: {color: '#fff'}
+    })
   } else if ((this.props.index-3)%4 === 0) {
-    background = StyleSheet.create({ 
-      color: {backgroundColor: '#00afd1' }})
+    navSwatches = StyleSheet.create({ 
+      tabs: {backgroundColor: '#00afd1' },
+      arrow: {color: '#fff'}
+    })
   } else {
-    background = StyleSheet.create({ 
-      color: {backgroundColor: '#eaedf1' }})
+    navSwatches = StyleSheet.create({ 
+      tabs: {backgroundColor: '#eaedf1' },
+      arrow: {color: '#eaedf1'}
+    })
   }
 
     return (
-      <View style={[styles.header, background.color]}> 
+      <View style={[styles.header, navSwatches.tabs]}> 
         <Text style={styles.preTitle}>
           Today On
         </Text>
-        <Text style={styles.title}>
-          Tandem News
-        </Text>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flex:1}}>
+            <Text style={{paddingLeft: 15}}>
+             <Icon name="ios-arrow-back" size={32} style={navSwatches.arrow}></Icon>
+            </Text>
+          </View>
+          <View style={{flex:4}}>
+            <Text style={styles.title}>
+              Tandem News
+            </Text>
+          </View>
+          <View style={{flex:1}}>
+            <Text style={{fontSize: 10}}>
+              { ' '}
+            </Text>
+          </View>
+        </View>
         <Text style={styles.tagline}>
           News In Perspective
         </Text>
