@@ -4,14 +4,18 @@ import { View, ScrollView, Text, ListView, TouchableHighlight } from 'react-nati
 import { connect } from 'react-redux';
 import  NavigationBar  from 'react-native-navbar';
 
-
-
-
-import articlesData from '../data/articlesData';
-import ArticleContainer from './ArticleContainer';
+// Actions & Stores
 import * as storyActions from './storyActions';
-import styles from './styles.js';
 import Store from '../store.js';
+import articlesData from '../data/articlesData';
+
+// Styles & Fonts
+import styles from './styles.js';
+
+// Components
+import ArticleContainer from './ArticleContainer';
+import Nav from '../nav/Nav';
+
 
 class Story extends Component {
 
@@ -45,6 +49,8 @@ class Story extends Component {
             ref={(scrollView) => { _scrollView = scrollView; }}
             automaticallyAdjustContentInsets={false}
             scrollEventThrottle={200}>
+
+            <Nav index={3} />
 
             {/* Funnel store data into ListView */}
             <ListView

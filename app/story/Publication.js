@@ -4,8 +4,11 @@ import Sldr from 'react-native-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Communications from 'react-native-communications';
 
-
+// Styles & Fonts
 import styles from './styles.js';
+
+// Components 
+
 
 
 
@@ -59,7 +62,7 @@ class Publication extends Component {
 	          style={{flex: 1, flexWrap: 'wrap'}}>
 
 			      <Text style={styles.headlineText}
-			        numberOfLines={3}>
+			        numberOfLines={2}>
 			        {this.props.headline}
 			        { ' ' }
 			      </Text>
