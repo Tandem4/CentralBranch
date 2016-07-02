@@ -37,9 +37,10 @@ class Story extends Component {
   }
 
   navigate() { this.props.navigator.push({ name: 'Trend' }); }
-
+  
 	render() {
 		const { state, actions } = this.props;
+
 		return (
 
         <View style={styles.body}>
@@ -50,7 +51,7 @@ class Story extends Component {
             automaticallyAdjustContentInsets={false}
             scrollEventThrottle={200}>
 
-            <Nav index={3} />
+            <Nav index={3} navigator={this.props.navigator} />
 
             <View>
               <Text>
