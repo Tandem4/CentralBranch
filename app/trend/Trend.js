@@ -13,6 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles.js';
 
 // Components
+import Nav from '../nav/Nav';
 import DataSquare from './DataSquare';
 import EndSquare from './EndSquare';
 
@@ -41,6 +42,7 @@ class Trend extends Component {
 
   render() {
     const { state, actions } = this.props;
+
     return (
       <View style={styles.body}>
 
@@ -48,24 +50,19 @@ class Trend extends Component {
          ref={(scrollView) => { _scrollView = scrollView; }}
          automaticallyAdjustContentInsets={false}
          scrollEventThrottle={200} >
-          <View style={styles.header}> 
-            <Text style={styles.preTitle}>
-              Today On
-            </Text>
-            <Text style={styles.title}>
-              Tandem News
-            </Text>
-            <Text style={styles.tagline}>
-              News In Perspective
-            </Text>
-          </View> 
+
+          <Nav />
 
           {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
 
           <View style={styles.trendRows}>
-
-            <DataSquare />
-            <DataSquare />
+            {/* Check async return on trendsData */}
+            { this.props.trendsData.trends ? 
+                this.props.trendsData.trends.map((trend, i) => 
+                    <DataSquare key={i} index={i} data={trend} /> 
+                ) 
+              : <Text>Loading Trends ...</Text> }
+            <EndSquare />
           </View>
 
 

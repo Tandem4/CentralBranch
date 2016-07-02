@@ -5,26 +5,6 @@ let styles = StyleSheet.create({
     backgroundColor: '#eaedf1',
     flex: 1,
   },
-  preTitle: {
-    fontSize: 12,
-    color: '#9ea7b3',
-    fontFamily: 'Silom',
-    textAlign: 'center',
-    marginTop: 30,
-  },
-  title: {
-    fontSize: 26,
-    color: '#1d3037',
-    fontFamily: 'Silom',
-    textAlign: 'center'
-  },
-  tagline: {
-    fontSize: 12,
-    color: '#9ea7b3',
-    fontFamily: 'Silom',
-    textAlign: 'center',
-    marginBottom: 30
-  },
   moss: {
     backgroundColor: '#1fbba6', 
   },
@@ -40,10 +20,11 @@ let styles = StyleSheet.create({
   trendRows: {
     backgroundColor: '#f4f4f4',
     flexDirection: 'row',
-    flexWrap: 'wrap' 
+    flexWrap: 'wrap',
+    flex: 1
   },
   dataSquare: {
-    flex: 1
+    flexWrap: 'wrap'
   },
   dataSquareTop: {
     alignItems: 'flex-end',
