@@ -16,6 +16,7 @@ import styles from './styles.js';
 import Nav from '../nav/Nav';
 import DataSquare from './DataSquare';
 import EndSquare from './EndSquare';
+import PolylineSVG from './PolylineSVG';
 
 // Shared Values
 let deviceWidth = ( Dimensions.get('window').width / 2 )
@@ -56,7 +57,7 @@ class Trend extends Component {
           {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
 
           <View style={styles.trendRows}>
-            {/* Check async return on trendsData */}
+            {/* Check async return on trendsData 
             { this.props.trendsData.trends ? 
                 this.props.trendsData.trends.map((trend, i) =>
 
@@ -70,15 +71,16 @@ class Trend extends Component {
                 ) 
               : <Text>Loading Trends ...</Text> }
             <EndSquare />
+          */}
+          </View>
+
+          <View>   
+           <PolylineSVG />   
           </View>
 
 
 
-          {/* <ListView
-            dataSource={this.props.dataSource}
-            {...actions}
-            renderRow = { this.renderRow.bind(this) }
-            enableEmptySections={true} /> */}
+
        </ScrollView>
       </View>
     )
