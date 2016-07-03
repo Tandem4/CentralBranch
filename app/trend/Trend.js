@@ -57,7 +57,7 @@ class Trend extends Component {
           {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
 
           <View style={styles.trendRows}>
-            {/* Check async return on trendsData
+            {/* Check async return on trendsData */}
             { this.props.trendsData.trends ? 
                 this.props.trendsData.trends.map((trend, i) =>
 
@@ -70,10 +70,10 @@ class Trend extends Component {
                     </TouchableOpacity> 
                 ) 
               : <Text>Loading Trends ...</Text> }
-               */}
-            <DataSquare index={0} data={{trend_name: 'European Union'}}/>
+               
+            {/* <DataSquare index={0} data={{trend_name: 'European Union'}}/>
             <DataSquare index={1} data={{trend_name: 'Trump'}}/>
-            <DataSquare index={2} data={{trend_name: 'Big Sur'}}/>
+            <DataSquare index={2} data={{trend_name: 'Big Sur'}}/> */}
             <EndSquare />
             
           

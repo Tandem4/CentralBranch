@@ -24,20 +24,19 @@ import Svg,{
 class PolylineSVG extends Component {
   render() {
     let y1= "40";
-    let y2= "50";
-    let y3= "20";
+    let y2= "20";
+    let y3= "30";
 
-    let dataPoints1 = `20,${y1} 40,${y2} 60,${y3}`;
-    let dataPoints2 = "20,40 40,50 60,20";
-
-
+    let dataPoints = `10,40 20,${y1} 30,${y2} 40,${y3}`;
+    console.log(this.props);
+    console.log("=========================");
     return (
       <Svg 
         height= "60"
-        width= "80" >
+        width= "50" >
 
       <Polyline
-        points={dataPoints1}
+        points={dataPoints}
         stroke="#fff"
         strokeWidth="4" 
         strokeLinecap="round"
