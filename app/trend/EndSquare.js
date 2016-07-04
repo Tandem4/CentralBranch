@@ -23,14 +23,14 @@ const EndSquare = (props) => {
       {/* Center Component */}
       <View style={styles.endSquareCenter}>
         <Text style={styles.endSquareCenterText}>
-          <Icon name="ios-happy-outline" size={54} color="#fff"></Icon>
+          <Icon name="ios-sad-outline" size={54} color="#fff"></Icon>
         </Text>
       </View>
       
       {/* Bottom Component */}
       <View style={styles.endSquareBottom}>
         <Text style={styles.endSquareBottomText}>
-          End
+          Nicole & Brett Broke the Internet
         </Text>
       </View>
 

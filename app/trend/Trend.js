@@ -69,12 +69,12 @@ class Trend extends Component {
 
                     </TouchableOpacity> 
                 ) 
-              : <Text>Loading Trends ...</Text> }
+              : <EndSquare /> }
                
             {/* <DataSquare index={0} data={{trend_name: 'European Union'}}/>
             <DataSquare index={1} data={{trend_name: 'Trump'}}/>
-            <DataSquare index={2} data={{trend_name: 'Big Sur'}}/> */}
-            <EndSquare />
+            <DataSquare index={2} data={{trend_name: 'Big Sur'}}/> 
+            <EndSquare /> */}
             
           
           </View>
