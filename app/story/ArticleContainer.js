@@ -1,8 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { Animated, StyleSheet, View, Text, Dimensions, WebView, TouchableHighlight } from 'react-native';
+
+// Actions & Store
+import Store from '../store.js';
+import * as storyActions from './storyActions';
+
+// Components
+import Publication from './Publication';
+
+// Fonts & Styles
 import styles from './styles.js';
 
-import Publication from './Publication';
 
 // let deviceWidth = Dimensions.get('window').width
 // let deviceHeight = Dimensions.get('window').height
@@ -13,11 +21,11 @@ import Publication from './Publication';
 const ArticleContainer = (article) => {
   return (
     <View>
-
+    	<Text>=>{article.title}</Text>
       {/* Data gets funneled into Publication */}
       <Publication
         publication={'Washington Post'}
-        headline={'Example of a very long descriptive headline from a major national publication on a trending topic'} 
+        headline={article.title} 
         moodScore= {15}/>
     
     </View>

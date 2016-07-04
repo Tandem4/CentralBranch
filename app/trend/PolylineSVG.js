@@ -28,8 +28,7 @@ class PolylineSVG extends Component {
     let y3= "30";
 
     let dataPoints = `10,40 20,${y1} 30,${y2} 40,${y3}`;
-    console.log(this.props);
-    console.log("=========================");
+    
     return (
       <Svg 
         height= "60"

@@ -7,7 +7,8 @@ import  NavigationBar  from 'react-native-navbar';
 // Actions & Stores
 import * as summaryActions from './summaryActions';
 import Store from '../store.js';
-import articlesData from '../data/articlesData';
+// Dummy Data
+import articles from '../data/articles';
 
 // Styles & Fonts
 import styles from './styles.js';

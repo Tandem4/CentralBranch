@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 
 // Actions & Store
 import Store from '../store.js';
-import articlesData from '../data/trendsData';
 import * as trendActions from './trendActions';
+// Dummy Data
+import trends from '../data/trends';
 
 // Styles & Fonts
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -30,19 +31,25 @@ class Trend extends Component {
   prepopulateData() {
     var context = this;
 
-    fetch('http://192.241.210.120:1337/api/v1/dashboard')
-    .then(function(res) {
-      context.props.requestTrends(JSON.parse(res._bodyText));
-    })
-    .catch(function(err) {
-      console.log("SOMETHING WENT WRONG", err);
-    });
+    // Dummy Data Version 
+    context.props.requestTrends({trends: trends});
+
+    // Live Data Version
+
+    // fetch('http://192.241.210.120:1337/api/v1/dashboard')
+    // .then(function(res) {
+    //   context.props.requestTrends(JSON.parse(res._bodyText));
+    // })
+    // .catch(function(err) {
+    //   console.log("SOMETHING WENT WRONG", err);
+    // });
   }
 
   navigate() { this.props.navigator.push({ name: 'Story' }); }
 
   render() {
     const { state, actions } = this.props;
+  
 
     return (
       <View style={styles.body}>
@@ -96,7 +103,7 @@ class Trend extends Component {
     return (
       <View style={styles.card} >
         <TouchableHighlight style={styles.full} onPress={ navigate }>
-          <Text style={styles.trendRow} >{trend.trend_name}</Text>
+          <Text style={styles.trendRow}>{trend.trend_name}</Text>
         </TouchableHighlight>
       </View>
     );
@@ -111,26 +118,26 @@ function mapStateToProps(state) {
 
     currentDate: function() {
       return new Date().toDateString();
-    }(),
+    }()
 
     // for ListView
-    dataSource: function() {
+    // dataSource: function() {
 
-      var currentTrends = state.dataSource.cloneWithRows(state.trendsData.trends || []);
+    //   var currentTrends = state.dataSource.cloneWithRows(state.trendsData.trends || []);
 
-      currentTrends._dataBlob.s1.sort(function(a, b) {
-        if (a.rank < b.rank) {
-            return -1;
-          }
-          if (a.rank > b.rank) {
-            return 1;
-          }
-          // a must be equal to b
-          return 0;
-        });
+    //   currentTrends._dataBlob.s1.sort(function(a, b) {
+    //     if (a.rank < b.rank) {
+    //         return -1;
+    //       }
+    //       if (a.rank > b.rank) {
+    //         return 1;
+    //       }
+    //       // a must be equal to b
+    //       return 0;
+    //     });
 
-      return currentTrends;
-    }()
+    //   return currentTrends;
+    // }()
   }
 }
 

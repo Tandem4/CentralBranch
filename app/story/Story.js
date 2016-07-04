@@ -7,7 +7,9 @@ import  NavigationBar  from 'react-native-navbar';
 // Actions & Stores
 import * as storyActions from './storyActions';
 import Store from '../store.js';
-import articlesData from '../data/articlesData';
+
+// Dummy Data
+import articles from '../data/articles';
 
 // Styles & Fonts
 import styles from './styles.js';
@@ -15,6 +17,7 @@ import styles from './styles.js';
 // Components
 import ArticleContainer from './ArticleContainer';
 import Nav from '../nav/Nav';
+import Publication from './Publication';
 
 
 class Story extends Component {
@@ -23,24 +26,30 @@ class Story extends Component {
     this.prepopulateData.bind(this)();
   }
 
+
   prepopulateData() {
     var context = this;
+    // Dummy Data Version
+    context.props.requestArticles(articles);
+    console.log('this passes', this.props.articlesData);
+   
 
-    // TODO:  Pass in the trend id from Trend view onPress event
-    fetch('http://192.241.210.120:1337/api/v1/trends/1')
-    .then(function(res) {
-      context.props.requestArticles(JSON.parse(res._bodyText));
-    })
-    .catch(function(err) {
-      console.log("SOMETHING WENT WRONG", err);
-    });
+    // Live Data Version
+    // fetch('http://192.241.210.120:1337/api/v1/trends/1')
+    // .then(function(res) {
+    //   context.props.requestArticles(JSON.parse(res._bodyText));
+    // })
+    // .catch(function(err) {
+    //   console.log("SOMETHING WENT WRONG", err);
+    // });
   }
 
   navigate() { this.props.navigator.push({ name: 'Trend' }); }
-  
-	render() {
-		const { state, actions } = this.props;
+  render() {
+    const { state, actions } = this.props;
+    console.log('THIS PASSES', this.props.articlesData);
 
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2 });
 		return (
 
         <View style={styles.body}>
@@ -60,11 +69,15 @@ class Story extends Component {
             </View>
 
             {/* Funnel store data into ListView */}
-            <ListView
-              dataSource={this.props.dataSource}
-              {...actions}
-              renderRow = {ArticleContainer}
-              enableEmptySections={true} />
+            { this.props.articlesData.length ? 
+                this.props.articlesData.map((article, index) => 
+                   <Publication
+                      publication={'Washington Post'}
+                      headline={article.title} 
+                      moodScore= {15}
+                      key={index} />)
+              : <View><Text>Loading ...</Text></View> } 
+ 
 
           </ScrollView>
         
@@ -75,24 +88,8 @@ class Story extends Component {
 
 function mapStateToProps(state) {
 	return {
-		articlesData: state.articlesData,
-		// for ListView
-		dataSource: function() {
-      var currentArticles = state.dataSource.cloneWithRows(state.articlesData.articles || []);
+		articlesData: state.articlesData
 
-      currentArticles._dataBlob.s1.sort(function(a, b) {
-        if (a.created_at > b.created_at) {
-            return -1;
-          }
-          if (a.created_at < b.created_at) {
-            return 1;
-          }
-          // a must be equal to b
-          return 0;
-        });
-
-      return currentArticles;
-    }()
 	}
 }
 
@@ -101,3 +98,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Story);
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Story;
