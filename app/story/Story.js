@@ -2,98 +2,97 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { View, ScrollView, Text, ListView, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
-import  NavigationBar  from 'react-native-navbar';
 
-
-
-
-import articlesData from '../data/articlesData';
-import ArticleContainer from './ArticleContainer';
+// Actions & Stores
 import * as storyActions from './storyActions';
-import styles from './styles.js';
 import Store from '../store.js';
+
+// Dummy Data
+import articles from '../data/articles';
+
+// Styles & Fonts
+import styles from './styles.js';
+
+// Components
+import ArticleContainer from './ArticleContainer';
+import Nav from '../nav/Nav';
+import Publication from './Publication';
+
 
 class Story extends Component {
 
-  componentWillMount() {
-    this.prepopulateData.bind(this)();
+  // componentWillMount() {
+  //   this.prepopulateData.bind(this)();
+  // }
+
+
+  // prepopulateData() {
+  //   var context = this;
+  //   // Dummy Data Version
+  //   // context.props.requestArticles(articles);
+  //   // console.log('this passes', this.props.articlesData);
+   
+
+  //   // Live Data Version
+
+  //   fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=2')
+  //   .then(function(res) {
+  //     context.props.requestArticles(JSON.parse(res._bodyText));
+  //   })
+  //   .catch(function(err) {
+  //     console.log("SOMETHING WENT WRONG", err);
+  //   });
+  // }
+
+  navigate() { 
+    this.props.navigator.push({ 
+      name: 'Trend'
+    }).bind(this); 
   }
 
-  prepopulateData() {
-    var context = this;
-
-    // TODO:  Pass in the trend id from Trend view onPress event
-    fetch('http://192.241.210.120:1337/api/v1/trends/1')
-    .then(function(res) {
-      context.props.requestArticles(JSON.parse(res._bodyText));
-    })
-    .catch(function(err) {
-      console.log("SOMETHING WENT WRONG", err);
-    });
-  }
-
-  navigate() { this.props.navigator.push({ name: 'Trend' }); }
-
-	render() {
-		const { state, actions } = this.props;
+  render() {
+    const { state, actions } = this.props;
 		return (
-			<View>
-        <NavigationBar
-          title={{title: 'Tandem News Feed', tintColor: '#fff', fontFamily: 'Silom'}}
-          leftButton={{title: 'Back', tintColor: '#fff'}}
-          tintColor={'#00afd1'}
-          style={{height: 100}}
-        />
-			    <TouchableHighlight style={styles.full} onPress={ this.navigate.bind(this) }>
-			      <Text style={styles.trendRow} >Back</Text>
-			    </TouchableHighlight>
 
         <View style={styles.body}>
 
-          <View style={{paddingBottom: 20}}>
-            <Text>{' '}</Text>
-          </View>
-
+          {/* Specify unsticky scroll */}
           <ScrollView
             ref={(scrollView) => { _scrollView = scrollView; }}
             automaticallyAdjustContentInsets={false}
             scrollEventThrottle={200}>
 
-            <ListView
-              dataSource={this.props.dataSource}
-              {...actions}
-              renderRow = {ArticleContainer}
-              enableEmptySections={true}
-            />
+            <Nav index={3} navigator={this.props.navigator} />
+
+            <View>
+              <Text>
+                { ' ' }
+              </Text>
+            </View>
+
+            {/* Funnel store data into ListView */}
+            { this.props.articlesData.length ? 
+                this.props.articlesData.map((article, index) => 
+                   <Publication
+                      publication={'Washington Post'}
+                      headline={article.title} 
+                      url={article.article_url}
+                      moodScore= {15}
+                      key={index} /> )
+              : <View><Text>Loading ...</Text></View> } 
+ 
 
           </ScrollView>
-        </View>   
         
-      </View>
+        </View>   
     )
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		articlesData: state.articlesData,
-		// for ListView
-		dataSource: function() {
-      var currentArticles = state.dataSource.cloneWithRows(state.articlesData.articles || []);
+		articlesData: state.articlesData
 
-      currentArticles._dataBlob.s1.sort(function(a, b) {
-        if (a.created_at > b.created_at) {
-            return -1;
-          }
-          if (a.created_at < b.created_at) {
-            return 1;
-          }
-          // a must be equal to b
-          return 0;
-        });
-
-      return currentArticles;
-    }()
 	}
 }
 
@@ -102,3 +101,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Story);
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Story;

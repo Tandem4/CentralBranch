@@ -1,4 +1,4 @@
-const trendsData  =  [
+const trends =  [
   {
     rank: 1,
     trend_name: "Trend 1"
@@ -81,4 +81,4 @@ const trendsData  =  [
   }
 ];
 
-export default trendsData;
+export default trends;
