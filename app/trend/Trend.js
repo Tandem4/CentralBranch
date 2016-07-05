@@ -48,25 +48,24 @@ class Trend extends Component {
       context.props.requestTrends({trends: firstNth});
     })
     .catch(function(err) {
-      console.log("SOMETHING WENT WRONG", err);
+      console.log("An error occured under prepopulateData", err);
     });
   }
 
   navigate(id) { 
     // this.loadArticles(id);
     let context = this;
-    console.log('is this passed along', id)
 
     fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=' + id)
     .then(function(res) {
       context.props.requestArticles(JSON.parse(res._bodyText));
-      this.props.navigator.push({ name: 'Story' })
+      context.props.navigator.push({ name: 'Story' })
     })
     .catch(function(err) {
-      console.log("SOMETHING WENT WRONG", err);
+      console.log("An error occured under navigate", err);
     });
 
-    this.props.navigator.push({ name: 'Story' }); 
+    // context.props.navigator.push({ name: 'Story' }); 
   }
 
 
@@ -84,21 +83,19 @@ class Trend extends Component {
 
           <Nav />
 
-          {/*<Text style={styles.date}>{this.props.currentDate}</Text>*/}
-
           <View style={styles.trendRows}>
             {/* Check async return on trendsData */}
             { this.props.trendsData.trends ? 
                 this.props.trendsData.trends.map((trend, i) =>
 
-                    <TouchableOpacity
-                      onPress={this.navigate.bind(this, trend.id)}
-                      key={i}>
+                  <TouchableOpacity
+                    onPress={this.navigate.bind(this, trend.id)}
+                    key={i}>
 
-                      {/* Component Containting Trend Data */}
-                      <DataSquare key={i} index={i} data={trend} />
+                    {/* Component Containting Trend Data */}
+                    <DataSquare key={i} index={i} data={trend} />
 
-                    </TouchableOpacity> 
+                  </TouchableOpacity> 
                 ) 
               : <EndSquare /> }
                
@@ -106,30 +103,12 @@ class Trend extends Component {
           
           </View>
 
-       </ScrollView>
+       </ScrollView> 
       </View>
     )
   }
 
-  // individual components for ListView
-  renderRow(trend) {
-
-    var navigate = function() {
-      this.props.navigator.push({
-        name: 'Story',
-      });
-    }.bind(this)
-
-    return (
-      <View style={styles.card} >
-        <TouchableHighlight style={styles.full} onPress={ navigate }>
-          <Text style={styles.trendRow}>{trend.trend_name}</Text>
-        </TouchableHighlight>
-      </View>
-    );
-
-  }
-}
+} 
 
 // bring in from state parts that this component is interested in
 function mapStateToProps(state) {

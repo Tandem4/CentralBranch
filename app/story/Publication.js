@@ -1,5 +1,5 @@
 import React, { Component, PropTypes, LinkingIOS } from 'react';
-import { Animated, StyleSheet, View, Text, Dimensions, WebView, TouchableOpacity, Slider } from 'react-native';
+import { Animated, StyleSheet, View, Text, Dimensions, WebView, TouchableOpacity, Slider, InteractionManager } from 'react-native';
 import Sldr from 'react-native-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Communications from 'react-native-communications';
@@ -15,13 +15,12 @@ import styles from './styles.js';
 class Publication extends Component {
 	handleOnPress(url) {
 		let articleUrl = this.props.url;
-		console.log(url, 'expect valid url 1');
-
 		if ( articleUrl[0] !== 'h') {
       articleUrl = 'http://' + this.props.url
 		}
-		console.log(articleUrl, 'expect valid url 2');
-		Communications.web(articleUrl);
+		InteractionManager.runAfterInteractions(() => {
+			Communications.web('articleUrl');
+		});
 	}
 
 	render() {

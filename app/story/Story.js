@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { View, ScrollView, Text, ListView, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
-import  NavigationBar  from 'react-native-navbar';
 
 // Actions & Stores
 import * as storyActions from './storyActions';
@@ -48,12 +47,11 @@ class Story extends Component {
   navigate() { 
     this.props.navigator.push({ 
       name: 'Trend'
-    }); 
+    }).bind(this); 
   }
 
   render() {
     const { state, actions } = this.props;
-    // console.log('THIS PASSES', this.props.articlesData);
 		return (
 
         <View style={styles.body}>
@@ -80,7 +78,7 @@ class Story extends Component {
                       headline={article.title} 
                       url={article.article_url}
                       moodScore= {15}
-                      key={index} />)
+                      key={index} /> )
               : <View><Text>Loading ...</Text></View> } 
  
 
