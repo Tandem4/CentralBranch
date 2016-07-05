@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import Store from '../store.js';
 import * as trendActions from './trendActions';
 // Dummy Data
-import trends from '../data/trends';
+// import trends from '../data/trends';
 
 // Styles & Fonts
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -32,17 +32,23 @@ class Trend extends Component {
     var context = this;
 
     // Dummy Data Version 
-    context.props.requestTrends({trends: trends});
+    // context.props.requestTrends({trends: trends});
 
     // Live Data Version
 
-    // fetch('http://192.241.210.120:1337/api/v1/dashboard')
-    // .then(function(res) {
-    //   context.props.requestTrends(JSON.parse(res._bodyText));
-    // })
-    // .catch(function(err) {
-    //   console.log("SOMETHING WENT WRONG", err);
-    // });
+    fetch('http://192.241.210.120:1337/api/v1/trends')
+    .then(function(res) {
+      let trends = JSON.parse(res._bodyText);
+      let firstNth = [];
+      let n = trends.length - 15;
+      for ( var i = trends.length-1; i > n; i--) {
+        firstNth.push(trends[i]);
+      }
+      context.props.requestTrends({trends: firstNth});
+    })
+    .catch(function(err) {
+      console.log("SOMETHING WENT WRONG", err);
+    });
   }
 
   navigate() { this.props.navigator.push({ name: 'Story' }); }
@@ -72,6 +78,7 @@ class Trend extends Component {
                       onPress={this.navigate.bind(this)}
                       key={i}>
 
+                      {/* Component Containting Trend Data */}
                       <DataSquare key={i} index={i} data={trend} />
 
                     </TouchableOpacity> 

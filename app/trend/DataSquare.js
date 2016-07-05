@@ -44,8 +44,10 @@ class DataSquare extends Component {
         
         {/* Top Component */}
         <View style={styles.dataSquareTop}>
-          <Text >
-            <Icon name="ios-options" size={18} color="#fff"></Icon>
+          <Text style={styles.dataSquareTopText}>
+            <Icon name="md-trending-up" size={14} color="#fff"></Icon>
+            { '  ' }
+            {Math.floor(this.props.data.rank)}
           </Text>
         </View>
 

@@ -30,6 +30,11 @@ let styles = StyleSheet.create({
     alignItems: 'flex-end',
     padding: 10 
   },
+  dataSquareTopText: {
+    fontSize: 14, 
+    fontFamily: 'Oswald', 
+    color: '#eaedf1'
+  },
   dataSquareCenter: {
     alignItems: 'center', 
     justifyContent: 'center', 
