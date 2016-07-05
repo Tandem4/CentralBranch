@@ -6,8 +6,8 @@ import rootReducer from './rootReducer';
 // import articlesData from './data/articlesData';
 
 
-let trendsData   = { message: "Loading Trends..." };
-let articlesData = { message: "Loading Articles..." };
+// let trendsData   = { message: "Loading Trends..." };
+// let articlesData = { message: "Loading Articles..." };
 
 
 let dataSource = new ListView.DataSource({
@@ -15,9 +15,9 @@ let dataSource = new ListView.DataSource({
 })
 
 const defaultState = {
-  trendsData,
-	articlesData,
-	dataSource
+  // trendsData,
+	// articlesData
+	// dataSource
 }
 
 const Store = createStore(rootReducer, defaultState);

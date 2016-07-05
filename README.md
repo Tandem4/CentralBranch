@@ -1,5 +1,4 @@
 
 # Tandem NewsFeed
 
-# Pull Notes
-
+# View Notes

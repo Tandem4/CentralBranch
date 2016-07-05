@@ -1,5 +1,5 @@
 import React, { Component, PropTypes, LinkingIOS } from 'react';
-import { Animated, StyleSheet, View, Text, Dimensions, WebView, TouchableOpacity, Slider, InteractionManager } from 'react-native';
+import { Animated, StyleSheet, View, Text, Dimensions, WebView, TouchableOpacity, Slider } from 'react-native';
 import Sldr from 'react-native-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Communications from 'react-native-communications';
@@ -13,16 +13,9 @@ import styles from './styles.js';
 
 
 class Publication extends Component {
-	handleOnPress(url) {
-		let articleUrl = this.props.url;
-		if ( articleUrl[0] !== 'h') {
-      articleUrl = 'http://' + this.props.url
-		}
-		InteractionManager.runAfterInteractions(() => {
-			Communications.web('articleUrl');
-		});
+	_onPressHeadline(){
+    Linking.openURL('https://www.facebook.com').catch(err => console.error('An error occured', err));
 	}
-
 	render() {
 		return (
 	    <View>
@@ -65,7 +58,7 @@ class Publication extends Component {
 	      <View style={styles.headline}>
 
 	        <TouchableOpacity 
-	          onPress={this.handleOnPress.bind(this)} 
+	          onPress={() => Communications.web('https://github.com/facebook/react-native')} 
 	          style={{flex: 1, flexWrap: 'wrap'}}>
 
 			      <Text style={styles.headlineText}

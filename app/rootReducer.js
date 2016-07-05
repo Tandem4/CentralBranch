@@ -6,8 +6,8 @@ import trendsData from './reducers/trendsDataReducer';
 
 const rootReducer = combineReducers({
   trendsData,
-  articlesData,
-  dataSource
+  articlesData
+  // dataSource
 });
 
 export default rootReducer;

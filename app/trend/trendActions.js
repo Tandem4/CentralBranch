@@ -4,3 +4,10 @@ export function requestTrends(trends) {
     trends
   }
 }
+
+export function requestArticles(articles) {
+  return {
+    type: 'REQUEST_ARTICLES',
+    articles
+  }
+}

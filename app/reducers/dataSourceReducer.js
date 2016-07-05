@@ -1,4 +1,3 @@
-
 const dataSource = (state = {}, action) => {
   switch (action.type) {
   	case 'UPDATE_DATASOURCE':
