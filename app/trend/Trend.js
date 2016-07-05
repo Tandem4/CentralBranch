@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 // Actions & Store
 import Store from '../store.js';
 import * as trendActions from './trendActions';
-import * as storyActions from '../story/storyActions';
+// import * as storyActions from '../story/storyActions';
 // Dummy Data
 // import trends from '../data/trends';
 
@@ -52,22 +52,23 @@ class Trend extends Component {
     });
   }
 
-  loadArticles() {
-    var context = this;
+  navigate(id) { 
+    // this.loadArticles(id);
+    let context = this;
+    console.log('is this passed along', id)
 
-    fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=2')
+    fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=' + id)
     .then(function(res) {
       context.props.requestArticles(JSON.parse(res._bodyText));
+      this.props.navigator.push({ name: 'Story' })
     })
     .catch(function(err) {
       console.log("SOMETHING WENT WRONG", err);
     });
-  }
 
-  navigate() { 
-    this.loadArticles();
     this.props.navigator.push({ name: 'Story' }); 
   }
+
 
   render() {
     const { state, actions } = this.props;
@@ -91,7 +92,8 @@ class Trend extends Component {
                 this.props.trendsData.trends.map((trend, i) =>
 
                     <TouchableOpacity
-                      onPress={this.navigate.bind(this)}
+                      onPress={this.navigate.bind(this, trend.id)}
+                      trendId={trend.id}
                       key={i}>
 
                       {/* Component Containting Trend Data */}
@@ -138,6 +140,7 @@ class Trend extends Component {
 function mapStateToProps(state) {
   return {
     trendsData: state.trendsData,
+    articlesData: state.articlesData,
 
     currentDate: function() {
       return new Date().toDateString();

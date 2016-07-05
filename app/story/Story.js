@@ -22,35 +22,38 @@ import Publication from './Publication';
 
 class Story extends Component {
 
-  componentWillMount() {
-    this.prepopulateData.bind(this)();
-  }
+  // componentWillMount() {
+  //   this.prepopulateData.bind(this)();
+  // }
 
 
-  prepopulateData() {
-    var context = this;
-    // Dummy Data Version
-    // context.props.requestArticles(articles);
-    // console.log('this passes', this.props.articlesData);
+  // prepopulateData() {
+  //   var context = this;
+  //   // Dummy Data Version
+  //   // context.props.requestArticles(articles);
+  //   // console.log('this passes', this.props.articlesData);
    
 
-    // Live Data Version
+  //   // Live Data Version
 
-    fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=2')
-    .then(function(res) {
-      context.props.requestArticles(JSON.parse(res._bodyText));
-    })
-    .catch(function(err) {
-      console.log("SOMETHING WENT WRONG", err);
-    });
+  //   fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=2')
+  //   .then(function(res) {
+  //     context.props.requestArticles(JSON.parse(res._bodyText));
+  //   })
+  //   .catch(function(err) {
+  //     console.log("SOMETHING WENT WRONG", err);
+  //   });
+  // }
+
+  navigate() { 
+    this.props.navigator.push({ 
+      name: 'Trend'
+    }); 
   }
-
-  navigate() { this.props.navigator.push({ name: 'Trend' }); }
+  
   render() {
     const { state, actions } = this.props;
-    console.log('THIS PASSES', this.props.articlesData);
-
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2 });
+    // console.log('THIS PASSES', this.props.articlesData);
 		return (
 
         <View style={styles.body}>
