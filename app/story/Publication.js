@@ -13,9 +13,17 @@ import styles from './styles.js';
 
 
 class Publication extends Component {
-	_onPressHeadline(){
-    Linking.openURL('https://www.facebook.com').catch(err => console.error('An error occured', err));
+	handleOnPress(url) {
+		let articleUrl = this.props.url;
+		console.log(url, 'expect valid url 1');
+
+		if ( articleUrl[0] !== 'h') {
+      articleUrl = 'http://' + this.props.url
+		}
+		console.log(articleUrl, 'expect valid url 2');
+		Communications.web(articleUrl);
 	}
+
 	render() {
 		return (
 	    <View>
@@ -58,7 +66,7 @@ class Publication extends Component {
 	      <View style={styles.headline}>
 
 	        <TouchableOpacity 
-	          onPress={() => Communications.web('https://github.com/facebook/react-native')} 
+	          onPress={this.handleOnPress.bind(this)} 
 	          style={{flex: 1, flexWrap: 'wrap'}}>
 
 			      <Text style={styles.headlineText}

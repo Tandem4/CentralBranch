@@ -50,7 +50,7 @@ class Story extends Component {
       name: 'Trend'
     }); 
   }
-  
+
   render() {
     const { state, actions } = this.props;
     // console.log('THIS PASSES', this.props.articlesData);
@@ -78,6 +78,7 @@ class Story extends Component {
                    <Publication
                       publication={'Washington Post'}
                       headline={article.title} 
+                      url={article.article_url}
                       moodScore= {15}
                       key={index} />)
               : <View><Text>Loading ...</Text></View> } 

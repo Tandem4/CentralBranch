@@ -93,7 +93,6 @@ class Trend extends Component {
 
                     <TouchableOpacity
                       onPress={this.navigate.bind(this, trend.id)}
-                      trendId={trend.id}
                       key={i}>
 
                       {/* Component Containting Trend Data */}
@@ -103,10 +102,6 @@ class Trend extends Component {
                 ) 
               : <EndSquare /> }
                
-            {/* <DataSquare index={0} data={{trend_name: 'European Union'}}/>
-            <DataSquare index={1} data={{trend_name: 'Trump'}}/>
-            <DataSquare index={2} data={{trend_name: 'Big Sur'}}/> 
-            <EndSquare /> */}
             
           
           </View>
@@ -146,24 +141,6 @@ function mapStateToProps(state) {
       return new Date().toDateString();
     }()
 
-    // for ListView
-    // dataSource: function() {
-
-    //   var currentTrends = state.dataSource.cloneWithRows(state.trendsData.trends || []);
-
-    //   currentTrends._dataBlob.s1.sort(function(a, b) {
-    //     if (a.rank < b.rank) {
-    //         return -1;
-    //       }
-    //       if (a.rank > b.rank) {
-    //         return 1;
-    //       }
-    //       // a must be equal to b
-    //       return 0;
-    //     });
-
-    //   return currentTrends;
-    // }()
   }
 }
 
