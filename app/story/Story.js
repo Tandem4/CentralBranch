@@ -30,18 +30,19 @@ class Story extends Component {
   prepopulateData() {
     var context = this;
     // Dummy Data Version
-    context.props.requestArticles(articles);
-    console.log('this passes', this.props.articlesData);
+    // context.props.requestArticles(articles);
+    // console.log('this passes', this.props.articlesData);
    
 
     // Live Data Version
-    // fetch('http://192.241.210.120:1337/api/v1/trends/1')
-    // .then(function(res) {
-    //   context.props.requestArticles(JSON.parse(res._bodyText));
-    // })
-    // .catch(function(err) {
-    //   console.log("SOMETHING WENT WRONG", err);
-    // });
+
+    fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=2')
+    .then(function(res) {
+      context.props.requestArticles(JSON.parse(res._bodyText));
+    })
+    .catch(function(err) {
+      console.log("SOMETHING WENT WRONG", err);
+    });
   }
 
   navigate() { this.props.navigator.push({ name: 'Trend' }); }

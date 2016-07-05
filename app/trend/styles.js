@@ -31,21 +31,24 @@ let styles = StyleSheet.create({
     padding: 10 
   },
   dataSquareTopText: {
-    fontSize: 14, 
+    fontSize: 18, 
     fontFamily: 'Oswald', 
     color: '#eaedf1'
   },
   dataSquareCenter: {
     alignItems: 'center', 
     justifyContent: 'center', 
-    marginTop: 15, 
+    marginTop: 20, 
     marginBottom: 10
   },
   dataSquareCenterText: {
-    fontSize: 25, 
+    fontSize: 30, 
     fontFamily: 'Oswald', 
     color: '#eaedf1', 
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+    lineHeight: 35
   },
   dataSquareBottom: {
     alignItems: 'center', 

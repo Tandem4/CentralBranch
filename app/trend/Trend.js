@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 // Actions & Store
 import Store from '../store.js';
 import * as trendActions from './trendActions';
+import * as storyActions from '../story/storyActions';
 // Dummy Data
 // import trends from '../data/trends';
 
@@ -51,7 +52,22 @@ class Trend extends Component {
     });
   }
 
-  navigate() { this.props.navigator.push({ name: 'Story' }); }
+  loadArticles() {
+    var context = this;
+
+    fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=2')
+    .then(function(res) {
+      context.props.requestArticles(JSON.parse(res._bodyText));
+    })
+    .catch(function(err) {
+      console.log("SOMETHING WENT WRONG", err);
+    });
+  }
+
+  navigate() { 
+    this.loadArticles();
+    this.props.navigator.push({ name: 'Story' }); 
+  }
 
   render() {
     const { state, actions } = this.props;
