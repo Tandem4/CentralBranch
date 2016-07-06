@@ -7,20 +7,27 @@ let styles = StyleSheet.create({
   preTitle: {
     fontSize: 12,
     color: '#474e56',
-    fontFamily: 'Silom',
+    fontFamily: 'AvenirNext-DemiBold',
     textAlign: 'center',
     marginTop: 30,
   },
   title: {
-    fontSize: 26,
+    fontSize: 30,
     color: '#1d3037',
-    fontFamily: 'Silom',
+    fontFamily: 'AvenirNext-Bold',
+    textShadowColor: '#1fbba6',
+    textShadowOffset: 0.7,
+    textShadowRadius: 1,
+    textShadowOffset: {
+      height: 1.5,
+      width: 1.5
+    },
     textAlign: 'center'
   },
   tagline: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#474e56',
-    fontFamily: 'Silom',
+    fontFamily: 'AvenirNext-DemiBold',
     textAlign: 'center',
     marginBottom: 30
   }

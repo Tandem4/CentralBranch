@@ -55,7 +55,7 @@ class Nav extends Component {
           </View>
           <View style={{flex:4}}>
             <Text style={styles.title}>
-              Tandem News
+              TANDEM NEWS
             </Text>
           </View>
           <View style={{flex:1}}>

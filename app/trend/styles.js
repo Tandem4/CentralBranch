@@ -31,8 +31,8 @@ let styles = StyleSheet.create({
     padding: 10 
   },
   dataSquareTopText: {
-    fontSize: 18, 
-    fontFamily: 'Oswald', 
+    fontSize: 16, 
+    fontFamily: 'AvenirNext-DemiBold', 
     color: '#eaedf1'
   },
   dataSquareCenter: {
@@ -43,7 +43,7 @@ let styles = StyleSheet.create({
   },
   dataSquareCenterText: {
     fontSize: 30, 
-    fontFamily: 'Oswald', 
+    fontFamily: 'AvenirNext-DemiBold', 
     color: '#eaedf1', 
     textAlign: 'center',
     paddingLeft: 10,
@@ -67,7 +67,7 @@ let styles = StyleSheet.create({
   },
   endSquareCenterText: {
     fontSize: 25, 
-    fontFamily: 'Oswald', 
+    fontFamily: 'AvenirNext-DemiBold', 
     color: '#eaedf1'
   },
   endSquareBottom: {
@@ -75,7 +75,7 @@ let styles = StyleSheet.create({
   },  
   endSquareBottomText: {
     fontSize: 20, 
-    fontFamily: 'Oswald', 
+    fontFamily: 'AvenirNext-DemiBold', 
     color: '#eaedf1'
   },
   date: {
