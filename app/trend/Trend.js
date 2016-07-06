@@ -41,8 +41,8 @@ class Trend extends Component {
     .then(function(res) {
       let trends = JSON.parse(res._bodyText);
       let firstNth = [];
-      let n = trends.length - 15;
-      for ( var i = trends.length-1; i > n; i--) {
+      let n = 15;
+      for ( var i = 0; i < n; i++) {
         firstNth.push(trends[i]);
       }
       context.props.requestTrends({trends: firstNth});
@@ -56,7 +56,7 @@ class Trend extends Component {
     // this.loadArticles(id);
     let context = this;
 
-    fetch('http://192.241.210.120:1337/api/v1/trends/articles?id=' + id)
+    fetch('http://192.241.210.120:1337/api/v1/articles/?id=' + id)
     .then(function(res) {
       context.props.requestArticles(JSON.parse(res._bodyText));
       context.props.navigator.push({ name: 'Story' })
