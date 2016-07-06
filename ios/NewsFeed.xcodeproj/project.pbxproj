@@ -31,8 +31,8 @@
 		CE6BF5691D2497760066B3EE /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE6BF5611D2497760066B3EE /* MaterialIcons.ttf */; };
 		CE6BF56A1D2497760066B3EE /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE6BF5621D2497760066B3EE /* Octicons.ttf */; };
 		CE6BF56B1D2497760066B3EE /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE6BF5631D2497760066B3EE /* Zocial.ttf */; };
-		CE9F55CB1D24BE3C000C5D01 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9F55CA1D24BE3C000C5D01 /* Oswald-Regular.ttf */; };
-		CE9F55CF1D24C6FA000C5D01 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9F55CE1D24C6FA000C5D01 /* Silom.ttf */; };
+		CE70C6881D2D87D600B21E23 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE70C6861D2D87D600B21E23 /* Oswald-Regular.ttf */; };
+		CE70C6891D2D87D600B21E23 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE70C6871D2D87D600B21E23 /* Silom.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,8 +154,8 @@
 		CE6BF5611D2497760066B3EE /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		CE6BF5621D2497760066B3EE /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		CE6BF5631D2497760066B3EE /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		CE9F55CA1D24BE3C000C5D01 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Regular.ttf"; path = "../../../../../../../../../../../Library/Fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
-		CE9F55CE1D24C6FA000C5D01 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Silom.ttf; path = ../../../../../../../../../../../Library/Fonts/Silom.ttf; sourceTree = "<group>"; };
+		CE70C6861D2D87D600B21E23 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		CE70C6871D2D87D600B21E23 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +319,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CE70C6851D2D87D600B21E23 /* resources */,
 				CE6BF55B1D2497760066B3EE /* Fonts */,
 				13B07FAE1A68108700A75B9A /* NewsFeed */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -349,8 +350,6 @@
 		CE6BF55B1D2497760066B3EE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CE9F55CE1D24C6FA000C5D01 /* Silom.ttf */,
-				CE9F55CA1D24BE3C000C5D01 /* Oswald-Regular.ttf */,
 				CE6BF55C1D2497760066B3EE /* Entypo.ttf */,
 				CE6BF55D1D2497760066B3EE /* EvilIcons.ttf */,
 				CE6BF55E1D2497760066B3EE /* FontAwesome.ttf */,
@@ -364,12 +363,13 @@
 			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
-		CED4AED81D2CA92C009795A2 /* Products */ = {
+		CE70C6851D2D87D600B21E23 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				CED4AEE61D2CA92D009795A2 /* libRNSVG.a */,
+				CE70C6861D2D87D600B21E23 /* Oswald-Regular.ttf */,
+				CE70C6871D2D87D600B21E23 /* Silom.ttf */,
 			);
-			name = Products;
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,14 +583,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE70C6881D2D87D600B21E23 /* Oswald-Regular.ttf in Resources */,
 				CE6BF5691D2497760066B3EE /* MaterialIcons.ttf in Resources */,
 				CE6BF56A1D2497760066B3EE /* Octicons.ttf in Resources */,
 				CE6BF56B1D2497760066B3EE /* Zocial.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CE70C6891D2D87D600B21E23 /* Silom.ttf in Resources */,
 				CE6BF5661D2497760066B3EE /* FontAwesome.ttf in Resources */,
 				CE6BF5651D2497760066B3EE /* EvilIcons.ttf in Resources */,
-				CE9F55CB1D24BE3C000C5D01 /* Oswald-Regular.ttf in Resources */,
-				CE9F55CF1D24C6FA000C5D01 /* Silom.ttf in Resources */,
 				CE6BF5681D2497760066B3EE /* Ionicons.ttf in Resources */,
 				CE6BF5671D2497760066B3EE /* Foundation.ttf in Resources */,
 				CE6BF5641D2497760066B3EE /* Entypo.ttf in Resources */,
