@@ -42,7 +42,7 @@ class DataSquare extends Component {
 
        <View style={[styles.dataSquare, {height: deviceWidth, width: deviceWidth}, background.color ]}>
         
-        {/* Top Component */}
+        {/* Top Component  */}
         <View style={styles.dataSquareTop}>
           <Text style={styles.dataSquareTopText}>
             <Icon name="md-trending-up" size={18} color="#fff"></Icon>
