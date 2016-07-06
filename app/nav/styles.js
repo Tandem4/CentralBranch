@@ -16,7 +16,6 @@ let styles = StyleSheet.create({
     color: '#1d3037',
     fontFamily: 'AvenirNext-Bold',
     textShadowColor: '#1fbba6',
-    textShadowOffset: 0.7,
     textShadowRadius: 1,
     textShadowOffset: {
       height: 1.5,
