@@ -42,7 +42,7 @@ let styles = StyleSheet.create({
     marginBottom: 10
   },
   dataSquareCenterText: {
-    fontSize: 30, 
+    fontSize: 26, 
     fontFamily: 'AvenirNext-DemiBold', 
     color: '#eaedf1', 
     textAlign: 'center',
