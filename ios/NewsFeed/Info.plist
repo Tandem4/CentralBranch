@@ -48,8 +48,6 @@
 		<string>MaterialIcons.ttf</string>
 		<string>Octicon.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>Oswald-Regular.ttf</string>
-		<string>Silom.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
