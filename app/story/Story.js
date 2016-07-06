@@ -74,10 +74,10 @@ class Story extends Component {
             { this.props.articlesData.length ? 
                 this.props.articlesData.map((article, index) => 
                    <Publication
-                      publication={'Washington Post'}
+                      publication={article.pub_name}
                       headline={article.title} 
                       url={article.article_url}
-                      moodScore= {15}
+                      moodScore= {article.score}
                       key={index} /> )
               : <View><Text>Loading ...</Text></View> } 
  
