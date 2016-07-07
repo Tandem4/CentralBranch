@@ -43,7 +43,7 @@
 
 ## Site Architecture 
 
-  ![Site Architecture](https://i.imgsafe.org/e02703c214.png)
+  ![Site Architecture](https://i.imgsafe.org/e0297453a4.png)
 
 ## Wireframes
 
