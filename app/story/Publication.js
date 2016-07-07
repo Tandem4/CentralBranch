@@ -51,9 +51,9 @@ class Publication extends Component {
 		        <Sldr
 		          minimumValue = {-100}
 		          maximumValue = {100}
-		          minimumTrackTintColor = '#ffffff'
-		          maximumTrackTintColor = '#ffffff'
-		          thumbTintColor = '#ffffff'
+		          minimumTrackTintColor = '#fff'
+		          maximumTrackTintColor = '#fff'
+		          thumbTintColor = '#fff'
 		          disabled = { true }
 		          value={this.props.moodScore} />
 	          
