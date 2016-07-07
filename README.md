@@ -99,7 +99,7 @@
 ## Tandem Team
   
   - Product Owner      :  Asifuzzaman AHmed
-  - Scrum Master       :  Nicole Skoguld
+  - Scrum Master       :  Nicole Skoglund
   - Development Team   :  Asifuzzaman Ahmed, Nicole Skoguld
                           Brett Lensvelt, Kani Munidasa
 
