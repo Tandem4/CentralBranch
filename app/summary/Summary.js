@@ -14,7 +14,6 @@ import articles from '../data/articles';
 import styles from './styles.js';
 
 // Components
-import ArticleContainer from './ArticleContainer';
 import Nav from '../nav/Nav';
 
 
