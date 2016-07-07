@@ -1,9 +1,10 @@
 
 # Tandem News 
-#### Version 1.0.1
-## News In Perspective
+##### News In Perspective
 
-## Overview
+#### Version 1.0.1
+
+### Overview
 
   Tandem-Views Repo contains mobile views for the 
   Tandem News Project. Version 1.0.1 is for the iPhone only.
@@ -59,6 +60,7 @@
 
 ## Folder Guide 
 
+```
   |- index.ios.js      
   |- resources         
   |- app/  
@@ -92,5 +94,12 @@
   |   |- App.js
   |   |- rootReducer.js
   |   |- store.js
+```
 
+## Tandem Team
   
+  - Product Owner      :  Asifuzzaman AHmed
+  - Scrum Master       :  Nicole Skoguld
+  - Development Team   :  Asifuzzaman Ahmed, Nicole Skoguld
+                          Brett Lensvelt, Kani Munidasa
+
