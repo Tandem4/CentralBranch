@@ -57,7 +57,7 @@ let styles = StyleSheet.create({
     color: '#5d5d5d',
     fontSize: 20
   },
-  dashHeaders: {
+  dashCard: {
     flex: 1,
     flexDirection: 'row',
     paddingLeft: 25,
@@ -66,6 +66,34 @@ let styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: '#5d5d5d',
+  },
+  dashHeaders: {
+    flex: 1,
+    alignItems: 'center'
+  },
+  dashHeadersText: {
+    fontFamily: 'Oswald',
+    fontSize: 14,
+    color: '#fff'
+  },
+  dashEmotionScore: {
+    flex:1, 
+    marginRight: 3, 
+    marginLeft: 3
+  },
+  dashEmotionScoreText: {
+    fontFamily: 'Silom', 
+    fontSize: 11, 
+    color: '#fff'
+  },
+  dashSentimentScore: {
+    flex: 1, 
+    alignItems: 'center'
+  },
+  dashSentimentScoreText: {
+    fontFamily: 'Silom', 
+    fontSize: 11, 
+    color: '#fff'
   },
   cardFooter: {
     flex: 1,

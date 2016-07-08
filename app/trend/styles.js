@@ -32,7 +32,7 @@ let styles = StyleSheet.create({
     marginTop: 10
   },
   dataSquareTopText: {
-    fontSize: 18, 
+    fontSize: 14, 
     fontFamily: 'Oswald', 
     color: '#eaedf1'
   },

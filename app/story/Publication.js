@@ -73,51 +73,51 @@ class Publication extends Component {
 
 	      </View>
 
-	      <View style={styles.dashHeaders}>
+	      <View style={styles.dashCard}>
 
-		      <View style={{flex: 1, alignItems: 'center'}}>
-			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
+		      <View style={styles.dashHeaders}>
+			      <Text style={styles.dashHeadersText}>
 			        EMOTION GRAPH
 			      </Text>
 		      </View>
 
-		      <View style={{flex: 1, alignItems: 'center'}}>
-			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
+		      <View style={styles.dashHeaders}>
+			      <Text style={styles.dashHeadersText}>
 			        SENTIMENT GRAPH
 			      </Text>
 		      </View>
 	      </View>
-	      <View style={styles.dashHeaders}>
+	      <View style={styles.dashCard}>
 
-		      <View style={{flex: 1, alignItems: 'center'}}>
+		      <View style={styles.dashHeaders}>
 
             <View style={{flexDirection: 'row'}}>
-			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
-					      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+			        <View style={styles.dashEmotionScore}>
+					      <Text style={styles.dashEmotionScoreText}>
 					        {this.props.article.anger}
 					      </Text>
 			        </View>
 
-			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
-	   			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+			        <View style={styles.dashEmotionScore}>
+	   			      <Text style={styles.dashEmotionScoreText}>
 					        {this.props.article.disgust}
 					      </Text>
 			        </View>
 
-			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
-	   			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+			        <View style={styles.dashEmotionScore}>
+	   			      <Text style={styles.dashEmotionScoreText}>
 					        {this.props.article.fear}
 					      </Text>
 			        </View>
 
-			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>  
-	  			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+			        <View style={styles.dashEmotionScore}>  
+	  			      <Text style={styles.dashEmotionScoreText}>
 					        {this.props.article.joy}
 					      </Text>
 			        </View>
 
-			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
-					      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+			        <View style={styles.dashEmotionScore}>
+					      <Text style={styles.dashEmotionScoreText}>
 					        {this.props.article.sadness}
 					      </Text>
 			        </View>
@@ -125,8 +125,8 @@ class Publication extends Component {
 
 		      </View>
 
-		      <View style={{flex: 1, alignItems: 'center'}}>
-			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+		      <View style={styles.dashSentimentScore}>
+			      <Text style={styles.dashSentimentScoreText}>
 			        {this.props.article.score}
 			      </Text>
 		      </View>
