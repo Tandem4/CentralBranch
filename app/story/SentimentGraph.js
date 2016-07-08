@@ -21,9 +21,16 @@ import Svg,{
 
 class SentimentGraph extends Component {
   render() {
-    let dataPoint = (( this.props.article.score+100 ) / 200 * 80);
-    // let dataPoints = `10,40 20,${y1} 30,${y2} 40,${y3}`;
-    // "anger":99,"disgust":7,"fear":46,"joy":4,"sadness":5,
+    
+    {/*
+      1) Add 100 to bar to shift scale from -100 to 100, into 0 to 200
+      2) Divie by potential total of scale (200)
+      3) multiply by potential total of SVG chart (80)
+      5) Add 5 to account for indentation needed to render rounded ends
+    */}
+
+    let dataPoint = ((( this.props.article.score+100 ) / 200 * 80 ) + 5 );
+
     return (
       <Svg 
         height= "60"

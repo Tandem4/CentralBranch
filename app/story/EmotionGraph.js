@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Animated, Component } from 'react';
 import Svg,{
     Circle,
     Ellipse,
@@ -23,11 +23,23 @@ import Svg,{
 
 class EmotionGraph extends Component {
   render() {
-    let anger = ((((100 - this.props.article.anger)/100) * 30) + 15);
-    let disgust = ((((100 - this.props.article.disgust)/100) * 30) + 15)
-    let fear = ((((100 - this.props.article.fear)/100) * 30) + 15)
-    let joy = ((((100 - this.props.article.joy)/100) * 30) + 15)
-    let sadness = ((((100 - this.props.article.sadness)/100) * 30) + 15)
+
+  {/* 
+    1) Y axis starts at top, which reverses graph. 
+        Items with value 5 will display fuller bar than
+        items with value 99. To reverse this, subtract 
+        value from 100. 
+    2) Divide by full potential value (100)
+    3) Multiply by full potential value of SVG chart (30)
+    4) Add 15 to count for the indentation needed to render
+        rounded corners .
+  */}
+
+    let anger = (((( 100 - this.props.article.anger ) / 100 ) * 30 ) + 15 );
+    let disgust = (((( 100 - this.props.article.disgust ) / 100 ) * 30 ) + 15 );
+    let fear = (((( 100 - this.props.article.fear ) / 100 ) * 30 ) + 15 );
+    let joy = (((( 100 - this.props.article.joy ) / 100 ) * 30 ) + 15 );
+    let sadness = (((( 100 - this.props.article.sadness ) / 100 ) * 30 ) + 15 );
 
 
     let angerPt = `10,${anger} 10,45`;
