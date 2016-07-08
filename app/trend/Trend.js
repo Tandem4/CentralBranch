@@ -18,7 +18,7 @@ import styles from './styles.js';
 import Nav from '../nav/Nav';
 import DataSquare from './DataSquare';
 import EndSquare from './EndSquare';
-import PolylineSVG from './PolylineSVG';
+
 
 // Shared Values
 let deviceWidth = ( Dimensions.get('window').width / 2 )

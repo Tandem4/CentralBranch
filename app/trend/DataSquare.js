@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles.js';     
 
 // Components 
-import PolylineSVG from './PolylineSVG';  
+
 
 let deviceWidth = ( Dimensions.get('window').width / 2 )
 let deviceHeight = ( Dimensions.get('window').height / 2 )
