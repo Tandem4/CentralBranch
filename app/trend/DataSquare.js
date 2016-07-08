@@ -54,7 +54,8 @@ class DataSquare extends Component {
         {/* Center Component */}
         <View style={styles.dataSquareCenter}>
 
-            <Text style={styles.dataSquareCenterText}>
+            <Text style={styles.dataSquareCenterText} 
+              numberOfLines={2}>
               {this.props.data.trend_name.toLowerCase()}
             </Text>
 

@@ -48,6 +48,8 @@ let styles = StyleSheet.create({
     textAlign: 'center',
     paddingLeft: 10,
     paddingRight: 10,
+    marginTop: 10,
+    marginBottom: 10,
     lineHeight: 35
   },
   dataSquareBottom: {

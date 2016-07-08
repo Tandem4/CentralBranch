@@ -22,6 +22,7 @@ import Svg,{
 
 
 class EmotionGraph extends Component {
+
   render() {
 
   {/* 

@@ -20,7 +20,7 @@ class Publication extends Component {
       articleUrl = 'http://' + this.props.url
 		}
 		InteractionManager.runAfterInteractions(() => {
-			Communications.web('articleUrl');
+			Communications.web(articleUrl);
 		});
 	}
 
