@@ -13,7 +13,7 @@ let styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: '#00afd1',
-    shadowColor: '#000000',
+    shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: {
@@ -27,8 +27,7 @@ let styles = StyleSheet.create({
   publicationText: {
     fontFamily: 'Silom',
     fontSize: 15,
-    // fontWeight: 'bold',
-    color: '#ffffff'
+    color: '#fff'
   },
   headline: {
     flex: 1,
@@ -37,12 +36,12 @@ let styles = StyleSheet.create({
     paddingLeft: 25,
     paddingRight: 25,
     paddingTop: 15,
-    paddingBottom: 5,
+    paddingBottom: 25,
     marginLeft: 15,
     marginRight: 15,
     borderBottomColor: '#eaedf1',
-    backgroundColor: '#ffffff',
-    shadowColor: '#000000',
+    backgroundColor: '#fff',
+    shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: {
@@ -57,6 +56,17 @@ let styles = StyleSheet.create({
     color: '#5d5d5d',
     fontSize: 20
   },
+  graphHeaders: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingLeft: 25,
+    paddingRight: 25,
+    paddingTop: 5,
+    paddingBottom: 5,
+    marginLeft: 15,
+    marginRight: 15,
+    backgroundColor: '#5d5d5d',
+  },
   cardFooter: {
     flex: 1,
     flexDirection: 'row',
@@ -68,10 +78,10 @@ let styles = StyleSheet.create({
     marginRight: 15,
     marginBottom: 11,
     borderBottomColor: '#eaedf1',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#5d5d5d',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
-    shadowColor: '#000000',
+    shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: {
@@ -91,7 +101,7 @@ let styles = StyleSheet.create({
     flex: 1,
     borderRadius: 5,
     height: 4,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
   },
   trendRow: {
     flex: 1,

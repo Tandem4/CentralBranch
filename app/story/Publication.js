@@ -8,7 +8,8 @@ import Communications from 'react-native-communications';
 import styles from './styles.js';
 
 // Components 
-
+import SentimentGraph from './SentimentGraph';
+import EmotionGraph from './EmotionGraph';
 
 
 
@@ -78,15 +79,53 @@ class Publication extends Component {
 
 	      </View>
 
-	      <View style={styles.cardFooter}>
-	        <Text style={{flex: 15}}>
-	         {' '}
-	        </Text>
-		      <Text style={styles.link}>
-		        <Icon name="ios-link" size={18} color="#5d5d5d"></Icon>
-		      </Text>
+	      <View style={styles.graphHeaders}>
 
+		      <View style={{flex: 1, alignItems: 'center'}}>
+			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
+			        EMOTION GRAPH
+			      </Text>
+		      </View>
+
+		      <View style={{flex: 1, alignItems: 'center'}}>
+			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
+			        SENTIMENT GRAPH
+			      </Text>
+		      </View>
 	      </View>
+	      <View style={styles.graphHeaders}>
+
+		      <View style={{flex: 1, alignItems: 'center'}}>
+			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
+			        
+			      </Text>
+		      </View>
+
+		      <View style={{flex: 1, alignItems: 'center'}}>
+			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
+			        46
+			      </Text>
+		      </View>
+	      </View>
+
+	      <View style={styles.cardFooter}>
+
+          <View style={{flex: 1, alignItems: 'center'}}>
+	          <EmotionGraph />
+	        </View>
+
+	        <View style={{flex: 1, alignItems: 'center'}}>
+	          <SentimentGraph />
+	        </View>
+
+  		      <View>
+				      <Text style={styles.link}>
+				        <Icon name="ios-link" size={18} color="#5d5d5d"></Icon>
+				      </Text>
+			      </View>
+
+		      </View>
+   
 
 	    </View>
 		)
