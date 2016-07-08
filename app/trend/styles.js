@@ -28,7 +28,7 @@ let styles = StyleSheet.create({
   },
   dataSquareTop: {
     alignItems: 'flex-end',
-    padding: 10 
+    paddingRight: 10 
   },
   dataSquareTopText: {
     fontSize: 18, 
