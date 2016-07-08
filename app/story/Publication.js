@@ -40,15 +40,9 @@ class Publication extends Component {
 			      </Text>
 		      </View>
 
-					{/* MoodScore Score #  */}
-		      <View>
-		        <Text style={styles.publicationText}>
-		          {this.props.moodScore}
-		        </Text>
-		      </View>
-
 					{/* MoodScore Graph  */}
 		      <View style={styles.moodScore}>
+		        {/*  Slider is Now SentimentGraph in Dash
 		        <Sldr
 		          minimumValue = {-100}
 		          maximumValue = {100}
@@ -56,7 +50,7 @@ class Publication extends Component {
 		          maximumTrackTintColor = '#fff'
 		          thumbTintColor = '#fff'
 		          disabled = { true }
-		          value={this.props.moodScore} />
+		          value={this.props.moodScore} />*/}
 	          
           </View>
 
@@ -79,7 +73,7 @@ class Publication extends Component {
 
 	      </View>
 
-	      <View style={styles.graphHeaders}>
+	      <View style={styles.dashHeaders}>
 
 		      <View style={{flex: 1, alignItems: 'center'}}>
 			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
@@ -93,29 +87,59 @@ class Publication extends Component {
 			      </Text>
 		      </View>
 	      </View>
-	      <View style={styles.graphHeaders}>
+	      <View style={styles.dashHeaders}>
 
 		      <View style={{flex: 1, alignItems: 'center'}}>
-			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
-			        
-			      </Text>
+
+            <View style={{flexDirection: 'row'}}>
+			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
+					      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+					        {this.props.article.anger}
+					      </Text>
+			        </View>
+
+			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
+	   			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+					        {this.props.article.disgust}
+					      </Text>
+			        </View>
+
+			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
+	   			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+					        {this.props.article.fear}
+					      </Text>
+			        </View>
+
+			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>  
+	  			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+					        {this.props.article.joy}
+					      </Text>
+			        </View>
+
+			        <View style={{flex:1, marginRight: 3, marginLeft: 3}}>
+					      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+					        {this.props.article.sadness}
+					      </Text>
+			        </View>
+		        </View>
+
 		      </View>
 
 		      <View style={{flex: 1, alignItems: 'center'}}>
-			      <Text style={{fontFamily: 'Oswald', fontSize: 14, color: '#fff'}}>
-			        46
+			      <Text style={{fontFamily: 'Silom', fontSize: 11, color: '#fff'}}>
+			        {this.props.article.score}
 			      </Text>
 		      </View>
 	      </View>
 
 	      <View style={styles.cardFooter}>
 
-          <View style={{flex: 1, alignItems: 'center'}}>
-	          <EmotionGraph />
+          <View style={{flex: 1, alignItems: 'center', marginLeft: 5}}>
+	          <EmotionGraph article={this.props.article} />
 	        </View>
 
 	        <View style={{flex: 1, alignItems: 'center'}}>
-	          <SentimentGraph />
+	          <SentimentGraph article={this.props.article} />
 	        </View>
 
   		      <View>

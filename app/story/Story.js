@@ -77,7 +77,8 @@ class Story extends Component {
                       publication={article.pub_name}
                       headline={article.title} 
                       url={article.article_url}
-                      moodScore= {article.score}
+                      moodScore={article.score}
+                      article={article}
                       key={index} /> )
               : <View><Text>Loading ...</Text></View> } 
  

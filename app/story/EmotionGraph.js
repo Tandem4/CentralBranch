@@ -23,11 +23,18 @@ import Svg,{
 
 class EmotionGraph extends Component {
   render() {
-    let angerPin = "40";
-    let disgustPin = "20";
-    let fearPin = "30";
-    let joyPin = "30";
-    let sadnessPin = "30";
+    let anger = ((((100 - this.props.article.anger)/100) * 30) + 15);
+    let disgust = ((((100 - this.props.article.disgust)/100) * 30) + 15)
+    let fear = ((((100 - this.props.article.fear)/100) * 30) + 15)
+    let joy = ((((100 - this.props.article.joy)/100) * 30) + 15)
+    let sadness = ((((100 - this.props.article.sadness)/100) * 30) + 15)
+
+
+    let angerPt = `10,${anger} 10,45`;
+    let disgustPt = `30,${disgust} 30,45`;
+    let fearPt = `50,${fear} 50,45`;
+    let joyPt = `70,${joy} 70,45`;
+    let sadnessPt = `90,${sadness} 90,45`;
 
     // let dataPoints = `10,40 20,${y1} 30,${y2} 40,${y3}`;
     // "anger":99,"disgust":7,"fear":46,"joy":4,"sadness":5,
@@ -36,10 +43,10 @@ class EmotionGraph extends Component {
         height= "60"
         width= "100" >
 
-     {/* Grid Lines */}
+     {/* Underlaying Bars */}
       <Polyline
         points="10,15 10,45"
-        stroke="#c8cbce"
+        stroke="#727272"
         strokeWidth="12" 
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -47,7 +54,7 @@ class EmotionGraph extends Component {
 
       <Polyline
         points="30,15 30,45"
-        stroke="#c8cbce"
+        stroke="#727272"
         strokeWidth="12" 
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -55,7 +62,7 @@ class EmotionGraph extends Component {
 
       <Polyline
         points="50,15 50,45"
-        stroke="#c8cbce"
+        stroke="#727272"
         strokeWidth="12" 
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -63,7 +70,7 @@ class EmotionGraph extends Component {
       
       <Polyline
         points="70,15 70,45"
-        stroke="#c8cbce"
+        stroke="#727272"
         strokeWidth="12" 
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -71,7 +78,7 @@ class EmotionGraph extends Component {
 
       <Polyline
         points="90,15 90,45"
-        stroke="#c8cbce"
+        stroke="#727272"
         strokeWidth="12" 
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -79,7 +86,7 @@ class EmotionGraph extends Component {
 
       {/* Anger Bar */}
       <Polyline
-        points="10,30 10,45"
+        points={angerPt}
         stroke="#af6d7e"
         strokeWidth="10" 
         strokeLinecap="round"
@@ -88,7 +95,7 @@ class EmotionGraph extends Component {
 
       {/* Disgust Bar */}
       <Polyline
-        points="30,40 30,45"
+        points={disgustPt}
         stroke="#ccc600"
         strokeWidth="10" 
         strokeLinecap="round"
@@ -97,7 +104,7 @@ class EmotionGraph extends Component {
 
       {/* Fear Bar */}
       <Polyline
-        points="50,25 50,45"
+        points={fearPt}
         stroke="#1fbba6"
         strokeWidth="10" 
         strokeLinecap="round"
@@ -106,7 +113,7 @@ class EmotionGraph extends Component {
 
       {/* Joy Bar */}
       <Polyline
-        points="70,15 70,45"
+        points={joyPt}
         stroke="#00afd1"
         strokeWidth="10" 
         strokeLinecap="round"
@@ -115,8 +122,8 @@ class EmotionGraph extends Component {
 
       {/* Sadness Bar */}
       <Polyline
-        points="90,25 90,45"
-        stroke="#5d5d5d"
+        points={sadnessPt}
+        stroke="#9ea7b3"
         strokeWidth="10" 
         strokeLinecap="round"
         strokeLinejoin="round"

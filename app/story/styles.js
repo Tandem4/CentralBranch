@@ -22,7 +22,8 @@ let styles = StyleSheet.create({
     }
   },
   publication: {
-    flex: 3
+    flex: 3,
+    padding: 10
   },
   publicationText: {
     fontFamily: 'Silom',
@@ -56,13 +57,12 @@ let styles = StyleSheet.create({
     color: '#5d5d5d',
     fontSize: 20
   },
-  graphHeaders: {
+  dashHeaders: {
     flex: 1,
     flexDirection: 'row',
     paddingLeft: 25,
     paddingRight: 25,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 15,
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: '#5d5d5d',
