@@ -43,19 +43,19 @@
 
 ## Site Architecture 
 
-  ![Site Architecture](https://i.imgsafe.org/e0297453a4.png)
+  ![Site Architecture](https://cloud.githubusercontent.com/assets/16094834/17824296/ef77de06-6615-11e6-8e8f-5960476475c1.png)
 
 ## Wireframes
 
-  ![Wireframes](https://i.imgsafe.org/e02b91307f.png)
+  ![Wireframes](https://cloud.githubusercontent.com/assets/16094834/17824297/ef78940e-6615-11e6-83d6-372c07bdd7bb.png)
 
 ## Brand Guides
 
-  ![Brand Guides](https://i.imgsafe.org/e02703c214.png)
+  ![Brand Guides](https://cloud.githubusercontent.com/assets/16094834/17824295/ef68c588-6615-11e6-9066-9ce48b2548eb.png)
 
 ## Screenshots
 
-  ![Site Architecture](https://cloud.githubusercontent.com/assets/10008938/15844915/2478c052-2c23-11e6-8069-5ed2edce3c05.png)
+  ![Screenshots](https://cloud.githubusercontent.com/assets/16094834/17824298/ef7a8728-6615-11e6-8331-434b25f1d961.png)
 
 
 ## Folder Guide 
